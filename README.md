@@ -2,6 +2,19 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
+## TODOS
+
+1. change path of index.html
+2. change path of mail & App.vue
+3. install fontawesome
+4. install element
+5. install dayjs
+6. install i18n
+7. redesign layout
+8. add cust component `<status>`
+9. add cust method `formate number`
+10. add quasar or other table
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).

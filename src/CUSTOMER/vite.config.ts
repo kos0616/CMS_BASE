@@ -7,19 +7,21 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 export default defineConfig(({ mode }) => {
   // command: 'build' | 'serve'
   // 根据当前工作目录中的 `mode` 加载 .env 文件
+  /** 取得當前的路徑 使用 process.cwd() 只會取得 package.json 層的路徑 */
+  const CUSTOMER = fileURLToPath(new URL('./', import.meta.url))
   // 设置第三个参数为 '' 来加载所有环境变量，而不管是否有 `VITE_` 前缀。
-  const env = loadEnv(mode, process.cwd(), '')
+  const env = loadEnv(mode, CUSTOMER, 'VITE_')
   const outDir = env.VITE_APP_NAME
 
   return {
     plugins: [vue(), vueJsx()],
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url))
+        '@': fileURLToPath(new URL('../', import.meta.url))
       }
     },
     build: {
-      outDir
+      outDir: `../../${outDir}`
     },
     /**
      * 全域變數
