@@ -1,14 +1,18 @@
 // import $i18n from './lang'
+import type { RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHistory } from 'vue-router'
 
 // import $store from '@/modules/FPKG-50000-Vuex/index' // lists 與axios溝通
 
 /** 自動引入路徑 */
 const Modules = requireAll(
-  import.meta.glob('@/**/router.ts', { eager: true }) as Record<string, { default: [] }>
+  import.meta.glob('@/**/router.ts', { eager: true }) as Record<
+    string,
+    { default: RouteRecordRaw[] }
+  >
 )
 
-// const error404 = {
+// TODO: const error404 = {
 //   path: '/error404',
 //   // redirect: '/login',
 //   component: () => import('@/modules/FPKG-20000-Util/components/error404.vue'),
@@ -24,7 +28,7 @@ export default createRouter({
 })
 
 // Myrouter.beforeEach((to: any, from: any, next) => {
-//   /** 路徑有變化 初始化分頁數 */
+// TODO: 路徑有變化 初始化分頁數
 //   if (from.name !== to.name) {
 //     const data = {
 //       paginator: {
@@ -50,7 +54,7 @@ function requireAll<T>(requireContext: Record<string, { default: T[] }>): T[] {
     .reduce((acc, cur) => [...acc, ...cur], [] as T[])
 }
 
-/** 設定網頁Title */
+// TODO: 設定網頁Title
 // export function setTitle(path: string | undefined) {
 //   if (!path) return
 //   let i18nPath: any = path

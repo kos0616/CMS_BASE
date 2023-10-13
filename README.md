@@ -4,16 +4,18 @@ This template should help get you started developing with Vue 3 in Vite.
 
 ## TODOS
 
-1. change path of index.html
-2. change path of mail & App.vue
-3. install fontawesome
-4. install element
-5. install dayjs
-6. install i18n
-7. redesign layout
-8. add cust component `<status>`
-9. add cust method `formate number`
-10. add quasar or other table
+1. [X] change path of index.html
+2. [X] change path of main & App.vue
+3. [X] declare routes
+4. [ ] install fontawesome
+5. [ ] install element
+6. [ ] install dayjs
+7. [ ] install i18n
+8. [ ] redesign layout
+9. [ ] add cust component `<status>`
+1. [ ] add cust method `formate number`
+1. [ ] add quasar or other table
+1. [ ] change title when router updated (title & description changer)
 
 ## Recommended IDE Setup
 
