@@ -7,7 +7,7 @@ This template should help get you started developing with Vue 3 in Vite.
 1. [X] change path of index.html
 2. [X] change path of main & App.vue
 3. [X] declare routes
-4. [ ] install mitt
+4. [X] install mitt
 5. [ ] global err handler
 6. [ ] add screenWidth
 7. [ ] install fontawesome
