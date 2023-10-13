@@ -6,7 +6,16 @@ import createMeta from '@/CORE/lib/createMeta'
 import router from './router'
 import App from './App.vue'
 
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $sum: (a: number, b: number) => number
+    $cry: (str: string) => void
+  }
+}
+
 const app = createApp(App)
+app.config.globalProperties.$sum = (a: number, b: number) => a + b
+app.config.globalProperties.$cry = (str: string) => alert(str)
 
 app.use(createPinia())
 app.use(router)
