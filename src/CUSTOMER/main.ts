@@ -2,7 +2,7 @@ import './assets/tailwind.scss'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import createMeta from '@/lib/createMeta'
+import createMeta from '@/CORE/lib/createMeta'
 import router from './router'
 import App from './App.vue'
 
