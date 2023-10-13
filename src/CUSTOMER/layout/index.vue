@@ -9,12 +9,20 @@ const fuckccc = (str: string) => {
   }
 }
 
+const throwError = () => {
+  const a = 'a' as any
+  return a.map((d: any) => d)
+  // throw new Error('Simulated error')
+}
+
 const aaa = 'bar'
 </script>
 
 <template>
   <header>header</header>
   <div>
+    <button @click="throwError">Throw Error</button>
+
     <button @click="$cry('KK123')">FUCK</button>
     <hr />
     <button @click="$bus.emit('foo', 'haha')">FOO</button>

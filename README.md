@@ -8,7 +8,12 @@ This template should help get you started developing with Vue 3 in Vite.
 2. [X] change path of main & App.vue
 3. [X] declare routes
 4. [X] install mitt
-5. [ ] global err handler
+5. [X] global err handler (未定)
+
+// 加入的優點: 客戶使用時報錯可以配合UI即時回傳錯誤
+
+// 加入的缺點: 可忽略的錯誤也會被回傳 ex: prompt cancel
+
 6. [ ] add screenWidth
 7. [ ] install fontawesome
 8. [ ] install element
