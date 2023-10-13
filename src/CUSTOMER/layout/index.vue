@@ -16,6 +16,8 @@ const aaa = 'bar'
   <header>header</header>
   <div>
     <button @click="$cry('KK123')">FUCK</button>
+    <hr />
+    <button @click="$bus.emit('foo', 'haha')">FOO</button>
     {{ $sum(1, 2) }}
 
     {{ aaa }}

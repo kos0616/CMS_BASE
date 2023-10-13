@@ -2,12 +2,15 @@ import './assets/tailwind.scss'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import createMeta from '@/CORE/lib/createMeta'
+import createMeta from '@/CORE/plugin/createMeta'
 import router from './router'
 import App from './App.vue'
 
+import { emitter } from '@/CORE/plugin/bus'
+
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
+    $bus: typeof emitter
     $sum: (a: number, b: number) => number
     $cry: (str: string) => void
   }
@@ -16,6 +19,7 @@ declare module '@vue/runtime-core' {
 const app = createApp(App)
 app.config.globalProperties.$sum = (a: number, b: number) => a + b
 app.config.globalProperties.$cry = (str: string) => alert(str)
+app.config.globalProperties.$bus = emitter
 
 app.use(createPinia())
 app.use(router)
