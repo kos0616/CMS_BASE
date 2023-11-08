@@ -9,11 +9,11 @@ const $bus = useBus()
 const callback = (str: string) => alert(str)
 
 onMounted(() => {
-  $bus.on('foo', callback)
+  $bus?.on('foo', callback)
 })
 
 onUnmounted(() => {
-  $bus.off('foo', callback)
+  $bus?.off('foo', callback)
 })
 </script>
 

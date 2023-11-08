@@ -1,34 +1,19 @@
 <script lang="ts" setup>
-import { getCurrentInstance } from 'vue'
-const internalInstance = getCurrentInstance()
-const $cry = internalInstance?.appContext.config.globalProperties.$cry
+import { inject } from 'vue'
+import { $screenHeight } from '@/CORE/symbols'
 
-const fuckccc = (str: string) => {
-  if ($cry instanceof Function) {
-    $cry(str)
-  }
-}
-
-const throwError = () => {
-  const a = 'a' as any
-  return a.map((d: any) => d)
-  // throw new Error('Simulated error')
-}
-
-const aaa = 'bar'
+const height = inject($screenHeight)
 </script>
 
 <template>
   <header>header</header>
   <div>
-    <button @click="throwError">Throw Error</button>
-
     <button @click="$cry('KK123')">FUCK</button>
     <hr />
     <button @click="$bus.emit('foo', 'haha')">FOO</button>
     {{ $sum(1, 2) }}
-
-    {{ aaa }}
+    {{ $screenWidth }}
+    {{ height }}
     <slot></slot>
   </div>
 </template>
