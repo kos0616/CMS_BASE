@@ -7,6 +7,11 @@ import useBus from '@/CORE/plugins/bus'
 import useScreen from '@/CORE/plugins/screen'
 import router from './router'
 import App from './App.vue'
+import { createI18n } from 'vue-i18n'
+
+const i18n = createI18n({
+  legacy: false // you must set `false`, to use Composition API
+})
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
@@ -19,10 +24,7 @@ const app = createApp(App)
 app.config.globalProperties.$sum = (a: number, b: number) => a + b
 app.config.globalProperties.$cry = (str: string) => alert(str)
 
-app.use(createPinia())
-app.use(router)
-app.use(useScreen)
-app.use(useBus)
+app.use(createPinia()).use(router).use(useScreen).use(useBus).use(i18n)
 
 app.mount('#app')
 

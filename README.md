@@ -14,13 +14,14 @@ This template should help get you started developing with Vue 3 in Vite.
 
 // 加入的缺點: 可忽略的錯誤也會被回傳 ex: prompt cancel
 
-6. [ ] add screenWidth
-7. [ ] install fontawesome
-8. [ ] install element
-9. [ ] install dayjs
-1. [ ] install i18n
+6. [X] add screenWidth
+7. [ ] $date
+8. [ ] install fontawesome
+9. [ ] install element
+1. [ ] install dayjs
+1. [X] install i18n
 1. [ ] redesign layout
-1. [ ] add cust component `<status>`
+1. [X] add cust component `<status>`
 1. [ ] add cust method `formate number`
 1. [ ] add quasar or other table
 1. [ ] change title when router updated (title & description changer)
