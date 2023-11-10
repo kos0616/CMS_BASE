@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 import createMeta from '@/CORE/lib/createMeta'
 import useBus from '@/CORE/plugins/bus'
 import useScreen from '@/CORE/plugins/screen'
+import formatNumber from '@/CORE/plugins/formatNumber'
 import router from './router'
 import App from './App.vue'
 import { createI18n } from 'vue-i18n'
@@ -24,7 +25,7 @@ const app = createApp(App)
 app.config.globalProperties.$sum = (a: number, b: number) => a + b
 app.config.globalProperties.$cry = (str: string) => alert(str)
 
-app.use(createPinia()).use(router).use(useScreen).use(useBus).use(i18n)
+app.use(createPinia()).use(router).use(useScreen).use(useBus).use(i18n).use(formatNumber)
 
 app.mount('#app')
 

@@ -19,6 +19,7 @@ onUnmounted(() => {
 
 <template>
   <layout>
+    {{ $formatNumber() }}
     <RouterView />
   </layout>
 </template>

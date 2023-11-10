@@ -8,3 +8,5 @@ export const $screenWidth: InjectionKey<Ref<number>> = Symbol()
 export const $screenHeight: InjectionKey<Ref<number>> = Symbol()
 
 export const $bus: InjectionKey<Emitter<Events>> = Symbol()
+
+export const $formatNumber: InjectionKey<Function> = Symbol()
