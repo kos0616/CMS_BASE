@@ -7,7 +7,7 @@ import { onMounted, onUnmounted } from 'vue'
 const $bus = useBus()
 
 const callback = (str: string) => alert(str)
-
+const url = import.meta.env.VITE_APP_URL
 onMounted(() => {
   $bus?.on('foo', callback)
 })
@@ -19,7 +19,6 @@ onUnmounted(() => {
 
 <template>
   <layout>
-    {{ $formatNumber() }}
     <RouterView />
   </layout>
 </template>
