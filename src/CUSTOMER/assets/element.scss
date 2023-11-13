@@ -1,0 +1,10 @@
+:root {
+  // 修正初始文字大小
+  --el-font-size-base: 16px;
+  // 修正初始顏色
+  --el-text-color-regular: inherit;
+}
+
+.el-dropdown {
+  line-height: inherit;
+}
