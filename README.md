@@ -17,8 +17,8 @@ This template should help get you started developing with Vue 3 in Vite.
 6. [X] add screenWidth
 7. [ ] $date
 8. [ ] install fontawesome
-9. [ ] install element
-1. [ ] install dayjs
+9. [X] install element
+1. [X] install dayjs
 1. [X] tailwindcss
 1. [X] install i18n
 1. [ ] redesign layout

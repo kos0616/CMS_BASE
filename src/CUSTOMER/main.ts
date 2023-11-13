@@ -1,6 +1,9 @@
 import './assets/tailwind.scss'
+import 'element-plus/dist/index.css'
 
 import { createApp } from 'vue'
+import ElementPlus from 'element-plus'
+import { createI18n } from 'vue-i18n'
 import { createPinia } from 'pinia'
 import createMeta from '@/CORE/lib/createMeta'
 import useBus from '@/CORE/plugins/bus'
@@ -8,7 +11,6 @@ import useScreen from '@/CORE/plugins/screen'
 import formatNumber from '@/CORE/plugins/formatNumber'
 import router from './router'
 import App from './App.vue'
-import { createI18n } from 'vue-i18n'
 
 const i18n = createI18n({
   legacy: false // you must set `false`, to use Composition API
@@ -25,7 +27,14 @@ const app = createApp(App)
 app.config.globalProperties.$sum = (a: number, b: number) => a + b
 app.config.globalProperties.$cry = (str: string) => alert(str)
 
-app.use(createPinia()).use(router).use(useScreen).use(useBus).use(i18n).use(formatNumber)
+app
+  .use(createPinia())
+  .use(router)
+  .use(useScreen)
+  .use(useBus)
+  .use(i18n)
+  .use(formatNumber)
+  .use(ElementPlus)
 
 app.mount('#app')
 
