@@ -25,5 +25,15 @@
   <body>
     <div id="app"></div>
     <script type="module" src="./main.ts"></script>
+
+    <script>
+      /** init theme */
+      const IS_DARK =
+        window.localStorage.theme === 'dark' ||
+        (!('theme' in window.localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+
+      if (IS_DARK) document.documentElement.dataset.mode = 'dark'
+    </script>
   </body>
 </html>

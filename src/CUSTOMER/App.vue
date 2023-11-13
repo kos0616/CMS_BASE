@@ -1,24 +1,18 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import { ref } from 'vue'
 import layout from './layout/index.vue'
-import { useBus } from '@/CORE/plugins/bus'
-import { onMounted, onUnmounted } from 'vue'
 
-const $bus = useBus()
-
-const callback = (str: string) => alert(str)
-const url = import.meta.env.VITE_APP_URL
-onMounted(() => {
-  $bus?.on('foo', callback)
-})
-
-onUnmounted(() => {
-  $bus?.off('foo', callback)
-})
+import EE from 'element-plus/es/locale/lang/en'
+import CC from 'element-plus/es/locale/lang/zh-cn'
+import TW from 'element-plus/es/locale/lang/zh-tw'
+const locale = ref(EE)
 </script>
 
 <template>
-  <layout>
-    <RouterView />
-  </layout>
+  <el-config-provider :locale="locale">
+    <layout>
+      <RouterView />
+    </layout>
+  </el-config-provider>
 </template>
