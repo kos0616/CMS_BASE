@@ -42,12 +42,10 @@
         <router-link @click="isOpen = false" class="home-nav-link md:hidden" to="/">
           Home
         </router-link>
-        <router-link @click="isOpen = false" class="home-nav-link" to="/news">
-          News
-        </router-link>
+        <router-link @click="isOpen = false" class="home-nav-link" to="/news"> News </router-link>
 
         <div class="home-nav-link">
-          <i class="fa-solid fa-language"></i>
+          <lang></lang>
         </div>
         <div class="home-nav-link">
           <SwitchDarkMode></SwitchDarkMode>
@@ -66,6 +64,7 @@
 
 <script lang="ts" setup>
 import SwitchDarkMode from './switchDarkMode/index.vue'
+import lang from './switchLang/index.vue'
 import { ref } from 'vue'
 import logo from '../../assets/logo.svg'
 const BRAND = ref('BASE_CMS')

@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
 export type Events = {
   foo: string
   bar?: number
+  changeLang: string
 }
 
 export const useBus = () => inject($bus)
