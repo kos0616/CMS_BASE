@@ -16,6 +16,7 @@ const locale = ref(EE)
   <el-config-provider :locale="locale">
     <header>header</header>
     <div>
+      <i class="fas fa-times fa-2x"></i>
       {{ today }}
       {{ text }}
       <el-date-picker v-model="text"></el-date-picker>
