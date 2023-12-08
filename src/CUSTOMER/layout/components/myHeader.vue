@@ -2,7 +2,7 @@
   <header
     class="sticky top-0 z-20 border-b border-zinc-300 bg-zinc-100 py-2 shadow-sm dark:border-zinc-600 dark:bg-zinc-800"
   >
-    <div class="container mx-auto flex">
+    <div class="mx-auto flex px-3">
       <a href="/" class="mr-auto block">
         <strong class="flex items-center gap-2">
           <img :src="logo" alt="LOGO" height="36" class="block h-9" />
