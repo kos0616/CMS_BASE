@@ -33,7 +33,10 @@
         (!('theme' in window.localStorage) &&
           window.matchMedia('(prefers-color-scheme: dark)').matches)
 
-      if (IS_DARK) document.documentElement.dataset.mode = 'dark'
+      if (IS_DARK) {
+        document.documentElement.dataset.mode = 'dark'
+        document.documentElement.classList.add('dark')
+      }
     </script>
   </body>
 </html>
