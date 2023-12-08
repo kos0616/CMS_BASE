@@ -10,7 +10,7 @@
         </strong>
       </a>
 
-      <div class="fixed right-0 top-0 z-50 md:hidden">
+      <div class="fixed right-0 top-0 z-50 md:hidden mt-2">
         <button @click="isOpen = !isOpen" class="relative h-8 w-8 focus:outline-none">
           <span class="sr-only">isOpen main menu</span>
           <div
@@ -42,7 +42,7 @@
         <router-link @click="isOpen = false" class="home-nav-link md:hidden" to="/">
           Home
         </router-link>
-        <router-link @click="isOpen = false" class="home-nav-link" to="/news"> News </router-link>
+        <router-link @click="isOpen = false" class="home-nav-link" to="/TEST"> TEST </router-link>
 
         <div class="home-nav-link">
           <lang></lang>
@@ -78,7 +78,7 @@ const isOpen = ref(false)
 }
 
 .home-nav-link {
-  @apply transition-colors md:mx-1 md:p-1;
+  @apply transition-colors md:mx-1 md:p-1 px-3;
 
   &:after {
     @apply mt-2 block border-b border-primary-100 opacity-50 content-[''] dark:border-zinc-500 md:content-none;
