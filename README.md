@@ -25,7 +25,7 @@ This template should help get you started developing with Vue 3 in Vite.
 1. [X] add cust component `<status>`
 1. [X] add cust method `formate number`
 1. [ ] add quasar or other table
-1. [ ] 因為新型態element-plus locale 加入，語系的切換方法要再確認
+1. [X] 因為新型態element-plus locale 加入，語系的切換方法要再確認
 1. [ ] 檢查舊的語系切換方法是否可用
 1. [ ] change title when router updated (title & description changer)
 

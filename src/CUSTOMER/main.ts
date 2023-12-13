@@ -16,7 +16,12 @@ import router from './router'
 import App from './App.vue'
 
 const i18n = createI18n({
-  legacy: false // you must set `false`, to use Composition API
+  legacy: false, // you must set `false`, to use Composition API
+  messages: {
+    en: { test: 'test(en)' },
+    zh_TW: { test: '測試(繁中)' },
+    zh_CN: { test: '測試(簡中)' }
+  }
 })
 
 declare module '@vue/runtime-core' {
