@@ -5,14 +5,14 @@
       v-if="Array.isArray(value.subs) && value.subs.length > 0"
     >
       <template #title>
-        <i class="mr-1 fa-fw" :icon="value.icon"> </i>
+        <i class="mr-1 fa-fw" :class="value.icon"> </i>
         {{ showNodeName(value.p4_node_code) }}
       </template>
       <menuTree :menuData="value.subs"></menuTree>
     </el-sub-menu>
 
     <el-menu-item v-else :index="`/${value.p4_node_route}`">
-      <i class="mr-1 fa-fw" :icon="value.icon"> </i>
+      <i class="mr-1 fa-fw" :class="value.icon"> </i>
       {{ showNodeName(value.p4_node_code) }}
     </el-menu-item>
   </template>
