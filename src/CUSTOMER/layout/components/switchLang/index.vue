@@ -1,5 +1,5 @@
 <template>
-  <el-dropdown>
+  <el-dropdown trigger="click">
     <span>
       <i class="fa-solid fa-language"></i>
     </span>
