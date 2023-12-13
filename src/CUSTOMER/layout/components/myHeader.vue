@@ -63,8 +63,8 @@
 </template>
 
 <script lang="ts" setup>
-import SwitchDarkMode from './switchDarkMode/index.vue'
-import lang from './switchLang/index.vue'
+import SwitchDarkMode from '@/CORE/components/switchDarkMode/index.vue'
+import lang from '@/CORE/components/switchLang/index.vue'
 import { ref } from 'vue'
 import logo from '../../assets/logo.svg'
 const BRAND = ref('BASE_CMS')
