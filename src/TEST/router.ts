@@ -2,7 +2,7 @@ import type { RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/about',
+    path: '/TEST',
     component: () => import('./AboutView.vue')
   }
 ]
