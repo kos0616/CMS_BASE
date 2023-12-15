@@ -9,8 +9,6 @@ declare module '@vue/runtime-core' {
 }
 
 export type Events = {
-  foo: string
-  bar?: number
   changeLang: string
 }
 
@@ -18,7 +16,7 @@ export const useBus = () => inject($bus)
 
 export const emitter: Emitter<Events> = mitt<Events>()
 
-/** 自訂插件，全域bus */
+/** 自訂插件，全域bus $bus */
 export default {
   install: (app: App<Element>, options?: any) => {
     app.config.globalProperties.$bus = emitter

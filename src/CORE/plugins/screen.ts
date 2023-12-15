@@ -11,7 +11,9 @@ declare module '@vue/runtime-core' {
 export const useScreenWidth = () => inject($screenWidth)
 export const useScreenHeight = () => inject($screenHeight)
 
-/** 自訂插件，螢幕範圍監聽 */
+/** 自訂插件，螢幕範圍監聽
+ * $screenWidth $screenHeight
+ */
 export default {
   install: (app: App<Element>, options?: any) => {
     const width = ref(0)

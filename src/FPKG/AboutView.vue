@@ -16,23 +16,21 @@ const height = inject($screenHeight)
 const text = ref('')
 
 onMounted(() => {
-  $bus?.on('foo', callback)
+  // $bus?.on('foo', callback)
 })
 
 onUnmounted(() => {
-  $bus?.off('foo', callback)
+  // $bus?.off('foo', callback)
 })
 </script>
 <template>
   <div>
-    <button @click="$bus.emit('foo', 'haha')">FOO</button>
     <i class="fas fa-times fa-2x"></i>
     {{ url }}
     {{ today }}
     {{ text }}
     <el-date-picker v-model="text"></el-date-picker>
     <hr />
-    {{ $sum(1, 2) }}
     {{ $screenWidth }}
     {{ height }}
   </div>

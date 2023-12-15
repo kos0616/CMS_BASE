@@ -8,7 +8,7 @@ declare module '@vue/runtime-core' {
 
 export const useFormatNumber = () => inject($formatNumber)
 
-/** 自訂插件，數字格式化 */
+/** 自訂插件，數字格式化 $formatNumber */
 export default {
   install: (app: App<Element>, options?: any) => {
     app.config.globalProperties.$formatNumber = formatNumber
