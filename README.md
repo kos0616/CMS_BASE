@@ -15,7 +15,7 @@ This template should help get you started developing with Vue 3 in Vite.
 // 加入的缺點: 可忽略的錯誤也會被回傳 ex: prompt cancel
 
 6. [X] add screenWidth
-7. [ ] $date
+7. [X] $date
 8. [X] install fontawesome
 9. [X] install element
 1. [X] install dayjs
@@ -26,8 +26,12 @@ This template should help get you started developing with Vue 3 in Vite.
 1. [X] add cust method `formate number`
 1. [ ] add quasar or other table
 1. [X] 因為新型態element-plus locale 加入，語系的切換方法要再確認
-1. [ ] 檢查舊的語系切換方法是否可用
+1. [X] 檢查舊的語系切換方法是否可用
 1. [ ] change title when router updated (title & description changer)
+2. [ ] axios
+2. [ ] global locale 是否要繼續使用
+2. [ ] router 的規則調整
+2. [ ] state
 
 ## Recommended IDE Setup
 
