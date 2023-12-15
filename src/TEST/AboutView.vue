@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="$bus.emit('foo', 'haha')">FOO</button>
+    <!-- <button @click="$bus.emit('foo', 'haha')">FOO</button> -->
     <i class="fas fa-times fa-2x"></i>
     {{ url }}
     {{ today }}
@@ -17,8 +17,8 @@
         locale:
         {{ $i18n.locale }}
       </li>
+      <li>time: {{ $day(1702365916, 'YYYY-MM-DD') }}</li>
     </ul>
-    {{ $sum(1, 2) }}
     {{ $screenWidth }}
     {{ height }}
   </div>
@@ -41,11 +41,11 @@ const today = day().format('YYYY-MM-DD')
 const height = inject($screenHeight)
 const text = ref('')
 
-onMounted(() => {
-  $bus?.on('foo', callback)
-})
+// onMounted(() => {
+//   $bus?.on('foo', callback)
+// })
 
-onUnmounted(() => {
-  $bus?.off('foo', callback)
-})
+// onUnmounted(() => {
+//   $bus?.off('foo', callback)
+// })
 </script>

@@ -1,8 +1,9 @@
 import 'element-plus/dist/index.css'
+/** 額外的黑化 element theme */
 import 'element-plus/theme-chalk/dark/css-vars.css'
+import './assets/element.scss'
 
 import './assets/tailwind.scss'
-import './assets/element.scss'
 
 import { createApp } from 'vue'
 import ElementPlus from 'element-plus'
@@ -12,6 +13,7 @@ import createMeta from '@/CORE/lib/createMeta'
 import useBus from '@/CORE/plugins/bus'
 import useScreen from '@/CORE/plugins/screen'
 import formatNumber from '@/CORE/plugins/formatNumber'
+import day from '@/CORE/plugins/day'
 import router from './router'
 import App from './App.vue'
 
@@ -24,16 +26,7 @@ const i18n = createI18n({
   }
 })
 
-declare module '@vue/runtime-core' {
-  interface ComponentCustomProperties {
-    $sum: (a: number, b: number) => number
-    $cry: (str: string) => void
-  }
-}
-
 const app = createApp(App)
-app.config.globalProperties.$sum = (a: number, b: number) => a + b
-app.config.globalProperties.$cry = (str: string) => alert(str)
 
 app
   .use(createPinia())
@@ -42,6 +35,7 @@ app
   .use(useBus)
   .use(i18n)
   .use(formatNumber)
+  .use(day)
   .use(ElementPlus)
 
 app.mount('#app')
