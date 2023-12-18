@@ -10,12 +10,16 @@ export default () => {
   /** token 與效期檢查 */
   if (!auth || !token || Number(token) < Date.now()) saveToken();
 
+  delay();
   return auth;
 };
 
 function saveToken() {
   localStorage.setItem('x-authorisation', generateToken(60));
-  /** token 效期 30分鐘 並且會在設定的時間後更新token 效期 並且會在設定的時間後更新token */
+}
+
+/** token 效期 30分鐘 並且會在設定的時間後更新token 效期 並且會在設定的時間後更新token */
+function delay() {
   const newTime = Date.now() + 30 * 60 * 1000;
   localStorage.setItem('token', `${newTime}`);
 }

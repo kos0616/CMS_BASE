@@ -30,7 +30,7 @@ Axios.interceptors.request.use((config) => {
 
 Axios.interceptors.response.use(
   (response: AxiosResponse<backendResponse<any>>) => {
-    /** 後端的錯誤 20001 與其他 numbers */
+    /** 後端的錯誤 20001 與其他共用的 numbers */
     if (response.data.code !== 0) backendErrorHandler(response.data);
     return response;
   },
