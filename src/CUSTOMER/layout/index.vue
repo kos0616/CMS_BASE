@@ -9,6 +9,6 @@
 </template>
 
 <script lang="ts" setup>
-import myHeader from './components/myHeader.vue'
-import sidebar from '@/CORE/components/sidebar/index.vue'
+import myHeader from './components/myHeader.vue';
+import sidebar from '@/CORE/components/sidebar/index.vue';
 </script>

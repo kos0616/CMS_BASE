@@ -1,4 +1,4 @@
-import 'vue-router'
+import 'vue-router';
 
 /**
  * 定義 meta 屬性
@@ -6,9 +6,9 @@ import 'vue-router'
 declare module 'vue-router' {
   interface RouteMeta {
     /** 節點名稱 規則為 NODE_* */
-    title: string
+    title: string;
     /** 權限參考位址 */
-    url: string
+    url: string;
     /** 工具列 */
     toolbar?: (
       | 'create'
@@ -19,7 +19,7 @@ declare module 'vue-router' {
       | 'advSearch'
       | 'export'
       | 'paginator'
-    )[]
+    )[];
     // 添加其他您需要的属性
   }
 }

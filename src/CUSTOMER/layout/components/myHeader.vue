@@ -63,13 +63,13 @@
 </template>
 
 <script lang="ts" setup>
-import SwitchDarkMode from '@/CORE/components/switchDarkMode/index.vue'
-import lang from '@/CORE/components/switchLang/index.vue'
-import { ref } from 'vue'
-import logo from '../../assets/logo.svg'
-const BRAND = ref('BASE_CMS')
+import SwitchDarkMode from '@/CORE/components/switchDarkMode/index.vue';
+import lang from '@/CORE/components/switchLang/index.vue';
+import { ref } from 'vue';
+import logo from '../../assets/logo.svg';
+const BRAND = ref('BASE_CMS');
 
-const isOpen = ref(false)
+const isOpen = ref(false);
 </script>
 
 <style lang="postcss" scoped>

@@ -1,5 +1,5 @@
 declare global {
-  type Foo = 'bar'
+  type Foo = 'bar';
 }
 
-export {}
+export {};

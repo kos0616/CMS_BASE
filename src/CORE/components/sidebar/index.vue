@@ -5,9 +5,9 @@
 </template>
 
 <script lang="ts" setup>
-import submenu from './menuTree.vue'
-import { ref } from 'vue'
-import data from './test.json'
+import submenu from './menuTree.vue';
+import { ref } from 'vue';
+import data from './test.json';
 
-const menuData = ref(data)
+const menuData = ref(data);
 </script>

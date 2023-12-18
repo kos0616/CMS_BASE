@@ -62,12 +62,12 @@ export default (length: number = 60) => {
     'x',
     'y',
     'z'
-  ]
-  let nums = ''
+  ];
+  let nums = '';
   for (let i = 0; i < length; i += 1) {
-    const random: any = Math.random() * 61
-    const r = parseInt(random)
-    nums += data[r]
+    const random: any = Math.random() * 61;
+    const r = parseInt(random);
+    nums += data[r];
   }
-  return nums
-}
+  return nums;
+};

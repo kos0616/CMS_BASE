@@ -1,6 +1,6 @@
 // import $i18n from './lang'
-import type { RouteRecordRaw } from 'vue-router'
-import { createRouter, createWebHistory } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 
 // import $store from '@/modules/FPKG-50000-Vuex/index' // lists 與axios溝通
 
@@ -10,7 +10,7 @@ const Modules = requireAll(
     string,
     { default: RouteRecordRaw[] }
   >
-)
+);
 
 // TODO: const error404 = {
 //   path: '/error404',
@@ -25,7 +25,7 @@ const Modules = requireAll(
 export default createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [...Modules]
-})
+});
 
 // Myrouter.beforeEach((to: any, from: any, next) => {
 // TODO: 路徑有變化 初始化分頁數
@@ -51,7 +51,7 @@ function requireAll<T>(requireContext: Record<string, { default: T[] }>): T[] {
   return Object.values(requireContext)
     .map((module) => module.default)
     .filter((value) => value !== undefined)
-    .reduce((acc, cur) => [...acc, ...cur], [] as T[])
+    .reduce((acc, cur) => [...acc, ...cur], [] as T[]);
 }
 
 // TODO: 設定網頁Title

@@ -1,8 +1,8 @@
-import axios, { type AxiosResponse } from 'axios'
-import getToken from '../lib/token/getToken'
-import errorAlerter from './errorAlerter'
+import axios, { type AxiosResponse } from 'axios';
+import getToken from '../lib/token/getToken';
+import errorAlerter from './errorAlerter';
 
-export const BASE_URL = import.meta.env.VITE_APP_URL
+export const BASE_URL = import.meta.env.VITE_APP_URL;
 
 // todo: 用戶IP的初始化手法
 // todo: 後端的 error handler
@@ -19,14 +19,14 @@ const Axios = axios.create({
     // todo: IP
     // 'X-Branch-Source': ''
   }
-})
+});
 
 Axios.interceptors.response.use(
   (response) => response,
   (error) => {
-    errorAlerter(error)
-    return Promise.reject(error)
+    errorAlerter(error);
+    return Promise.reject(error);
   }
-)
+);
 
-export default Axios
+export default Axios;

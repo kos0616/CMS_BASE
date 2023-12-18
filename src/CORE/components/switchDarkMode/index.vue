@@ -19,6 +19,6 @@
 </template>
 
 <script lang="ts" setup>
-import useSwitchDarkmode from '../../API/useSwitchDarkmode'
-const { theme } = useSwitchDarkmode()
+import useSwitchDarkmode from '../../API/useSwitchDarkmode';
+const { theme } = useSwitchDarkmode();
 </script>

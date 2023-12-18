@@ -1,21 +1,21 @@
-import 'element-plus/dist/index.css'
+import 'element-plus/dist/index.css';
 /** 額外的黑化 element theme */
-import 'element-plus/theme-chalk/dark/css-vars.css'
-import './assets/element.scss'
+import 'element-plus/theme-chalk/dark/css-vars.css';
+import './assets/element.scss';
 
-import './assets/tailwind.scss'
+import './assets/tailwind.scss';
 
-import { createApp } from 'vue'
-import ElementPlus from 'element-plus'
-import { createI18n } from 'vue-i18n'
-import { createPinia } from 'pinia'
-import createMeta from '@/CORE/lib/createMeta'
-import useBus from '@/CORE/plugins/bus'
-import useScreen from '@/CORE/plugins/screen'
-import formatNumber from '@/CORE/plugins/formatNumber'
-import day from '@/CORE/plugins/day'
-import router from './router'
-import App from './App.vue'
+import { createApp } from 'vue';
+import ElementPlus from 'element-plus';
+import { createI18n } from 'vue-i18n';
+import { createPinia } from 'pinia';
+import createMeta from '@/CORE/lib/createMeta';
+import useBus from '@/CORE/plugins/bus';
+import useScreen from '@/CORE/plugins/screen';
+import formatNumber from '@/CORE/plugins/formatNumber';
+import day from '@/CORE/plugins/day';
+import router from './router';
+import App from './App.vue';
 
 const i18n = createI18n({
   legacy: false, // you must set `false`, to use Composition API
@@ -24,9 +24,9 @@ const i18n = createI18n({
     zh_TW: { test: '測試(繁中)' },
     zh_CN: { test: '測試(簡中)' }
   }
-})
+});
 
-const app = createApp(App)
+const app = createApp(App);
 
 app
   .use(createPinia())
@@ -36,9 +36,9 @@ app
   .use(i18n)
   .use(formatNumber)
   .use(day)
-  .use(ElementPlus)
+  .use(ElementPlus);
 
-app.mount('#app')
+app.mount('#app');
 
 // XXX 不確定是否加入
 // 加入的優點: 客戶使用時報錯可以配合UI即時回傳錯誤
@@ -53,5 +53,5 @@ app.mount('#app')
 // }
 
 /** 在html加入建立日期 */
-document.documentElement.dataset.updated = BUILD_TIME
-createMeta('last-modified', BUILD_TIME)
+document.documentElement.dataset.updated = BUILD_TIME;
+createMeta('last-modified', BUILD_TIME);

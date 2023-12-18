@@ -1,22 +1,22 @@
-import { inject, type App } from 'vue'
-import { $day } from '../symbols'
-import dayjs from 'dayjs'
+import { inject, type App } from 'vue';
+import { $day } from '../symbols';
+import dayjs from 'dayjs';
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
-    $day: typeof day
+    $day: typeof day;
   }
 }
 
-export const useDay = () => inject($day)
+export const useDay = () => inject($day);
 
 /** 自訂插件，日期格式化 */
 export default {
   install: (app: App<Element>, options?: any) => {
-    app.config.globalProperties.$day = day
-    app.provide($day, day)
+    app.config.globalProperties.$day = day;
+    app.provide($day, day);
   }
-}
+};
 /**
  *
  * @param date 日期，可能為 string 或 timestamp
@@ -24,14 +24,14 @@ export default {
  * @returns The formatted date string.
  */
 function day(date?: string | number, format = 'YYYY-MM-DD HH:mm:ss') {
-  if (!date) return ''
+  if (!date) return '';
 
   if (/\d{13}/.test(date.toString())) {
-    const n = date as number
-    return dayjs.unix(n / 1000).format(format)
+    const n = date as number;
+    return dayjs.unix(n / 1000).format(format);
   } else if (/\d{10}/.test(date.toString())) {
-    const n = date as number
-    return dayjs.unix(n).format(format)
+    const n = date as number;
+    return dayjs.unix(n).format(format);
   }
-  return dayjs(date).format(format)
+  return dayjs(date).format(format);
 }
