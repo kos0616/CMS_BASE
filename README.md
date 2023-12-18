@@ -32,6 +32,11 @@ This template should help get you started developing with Vue 3 in Vite.
 2. [ ] global locale 是否要繼續使用
 2. [ ] router 的規則調整
 2. [ ] state
+2. [ ] Uploader update
+2. [ ] Type of backendresponse
+2. [ ] Axios and i18n can import useXXX or import from core
+2. [ ] If import from core need to add inject
+2. [ ] 
 
 ## Recommended IDE Setup
 
