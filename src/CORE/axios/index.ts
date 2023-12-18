@@ -21,6 +21,12 @@ const Axios = axios.create({
   }
 });
 
+Axios.interceptors.request.use((config) => {
+  const configData = config;
+  configData.headers['x-authorisation'] = getToken();
+  return config;
+});
+
 Axios.interceptors.response.use(
   (response) => response,
   (error) => {
