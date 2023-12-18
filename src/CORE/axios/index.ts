@@ -1,6 +1,7 @@
 import axios, { type AxiosResponse } from 'axios';
 import getToken from '../lib/token/getToken';
 import errorAlerter from './errorAlerter';
+import backendErrorHandler from './backendErrorHandler';
 
 export const BASE_URL = import.meta.env.VITE_APP_URL;
 
@@ -28,8 +29,13 @@ Axios.interceptors.request.use((config) => {
 });
 
 Axios.interceptors.response.use(
-  (response) => response,
+  (response: AxiosResponse<backendResponse<any>>) => {
+    /** 後端的錯誤 20001 與其他 numbers */
+    if (response.data.code !== 0) backendErrorHandler(response.data);
+    return response;
+  },
   (error) => {
+    /** 伺服器的錯誤 CORS 404 403 等 */
     errorAlerter(error);
     return Promise.reject(error);
   }
