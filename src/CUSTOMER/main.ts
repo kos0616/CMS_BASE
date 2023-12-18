@@ -7,7 +7,6 @@ import './assets/tailwind.scss';
 
 import { createApp } from 'vue';
 import ElementPlus from 'element-plus';
-import { createI18n } from 'vue-i18n';
 import { createPinia } from 'pinia';
 import createMeta from '@/CORE/lib/createMeta';
 import useBus from '@/CORE/plugins/bus';
@@ -16,15 +15,7 @@ import formatNumber from '@/CORE/plugins/formatNumber';
 import day from '@/CORE/plugins/day';
 import router from './router';
 import App from './App.vue';
-
-const i18n = createI18n({
-  legacy: false, // you must set `false`, to use Composition API
-  messages: {
-    en: { test: 'test(en)' },
-    zh_TW: { test: '測試(繁中)' },
-    zh_CN: { test: '測試(簡中)' }
-  }
-});
+import i18n from '@/CORE/i18n';
 
 const app = createApp(App);
 
