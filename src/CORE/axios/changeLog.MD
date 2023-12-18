@@ -6,7 +6,8 @@
 4. 加入伺服器預設 error 的 errorAlerter (數字系列與 CORS)
 5. inputFocusout 可以功成身退了, ElmessageBox 內建 auto focus
 6. 增加 errorAlerter 對應 CORS與 403 400 等伺服器問題
-7. 獨立一塊20001表單驗證錯誤
+7. 獨立一塊20001表單驗證錯誤handler
+8. 可能 1000系列的問題也會放在20001handler
 
 ## TODO
 
