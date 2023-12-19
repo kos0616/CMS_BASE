@@ -43,6 +43,7 @@
           Home
         </router-link>
         <router-link @click="isOpen = false" class="home-nav-link" to="/TEST"> TEST </router-link>
+        <router-link @click="isOpen = false" class="home-nav-link" to="/API"> API </router-link>
 
         <div class="home-nav-link">
           <lang></lang>
