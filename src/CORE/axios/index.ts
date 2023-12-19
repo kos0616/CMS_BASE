@@ -1,23 +1,23 @@
 import axios, { type AxiosResponse } from 'axios';
 import getToken from '../lib/token/getToken';
 import errorAlerter from './errorAlerter';
+import getIP from '../lib/getIP';
+
+// TODO IP from status
 
 export const BASE_URL = import.meta.env.VITE_APP_URL;
 
-// todo: 用戶IP的初始化手法
-// todo: 後端的 error handler
-// todo: 整合 headers => 測試是否合併過頭
-// todo: default error handle (numbers and CORS)
-// feature: loading 的觸發不再經由 axios 理由是會發生不斷閃白的現象 openLoading
-
+/**
+ * axios 實例，將所有請求都放在這個 axios 實例上面，便於管理
+ * getIp 僅會在實例初次引用且store內沒有IP時嘗試取得
+ */
 const Axios = axios.create({
   timeout: 100000,
   baseURL: BASE_URL,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-    'x-authorisation': getToken()
-    // todo: IP
-    // 'X-Branch-Source': ''
+    'x-authorisation': getToken(),
+    'X-Branch-Source': await getIP()
   }
 });
 
