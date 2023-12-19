@@ -28,15 +28,15 @@ This template should help get you started developing with Vue 3 in Vite.
 1. [X] 因為新型態element-plus locale 加入，語系的切換方法要再確認
 1. [X] 檢查舊的語系切換方法是否可用
 1. [ ] change title when router updated (title & description changer)
-2. [ ] axios
+2. [X] axios
 2. [ ] global locale 是否要繼續使用
 2. [ ] router 的規則調整
 2. [ ] state
 2. [ ] Uploader update
-2. [ ] Type of backendresponse
-2. [ ] Axios and i18n can import useXXX or import from core
-2. [ ] If import from core need to add inject
-2. [ ] 
+2. [X] Type of backendresponse
+2. [ ] get ip with .race
+2. [ ] get ip and stored in local
+2. [X] cust axios property errorHandler
 
 ## Recommended IDE Setup
 

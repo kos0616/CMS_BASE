@@ -1,7 +1,7 @@
 import router from '../../router';
 import { ElMessageBox } from 'element-plus';
 import i18n from '@/CORE/i18n';
-// todo import state
+// TODO state account logout
 
 /**
  * 權限不足時，將用戶登出
@@ -14,5 +14,8 @@ export default () => {
     message: i18n.global.t('Util.10015')
   });
 
-  router.replace('/login');
+  localStorage.removeItem('token');
+  localStorage.removeItem('x-authorisation');
+
+  router.push('/login');
 };
