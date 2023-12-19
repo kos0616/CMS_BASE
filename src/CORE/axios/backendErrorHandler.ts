@@ -1,14 +1,11 @@
 import { ElMessageBox } from 'element-plus';
 import { h } from 'vue';
 
-/** 通用的後端request輸入錯誤報錯 */
-export default (res: backendResponse<any>) => {
-  switch (res.code) {
-    case 20001:
-      alerter(res.response);
-      break;
-  }
-};
+/** 
+ * 20001 表單驗證錯誤
+ * 沒有直接從核心 axios import 的原因是，未來若有修改錯誤顯示方式的需求，可以在 customer/axios/error 進行修改
+ */
+export default (res: backendResponse<any>) => alerter(res.response);
 
 function alerter(res: string | Record<string, any>) {
   let msg;
