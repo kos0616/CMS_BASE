@@ -1,11 +1,11 @@
 import { ElMessageBox as $message } from 'element-plus'; // 取得警告標籤
 import i18n from '@/CORE/i18n';
 /** 後端系統的共用錯誤 */
-const utilErrorCodes = [10005];
+import { COMMON_ERRORS } from '@/CUSTOMER/axios/error';
 
 export default (data: backendResponse<any>): void => {
   /** 如果有找到共用的錯誤code則別不往下執行 */
-  if (data.code === 20001 || utilErrorCodes.includes(data.code)) return;
+  if (COMMON_ERRORS.includes(data.code)) return;
 
   let msg: any = i18n.global.t('Util.error', { code: data.code }) + ` ${data.response}`;
   const errorMsg: any = i18n.global.t(`NotificationSystem.${data.code}`);

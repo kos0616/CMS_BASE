@@ -32,13 +32,16 @@ This template should help get you started developing with Vue 3 in Vite.
 2. [ ] global locale 是否要繼續使用
 2. [ ] router 的規則調整
 2. [ ] state
+2. [ ] state of login state
 2. [X] init state: get IP
+2. [ ] state
 2. [ ] Uploader update
 2. [X] Type of backendresponse
 2. [X] get ip with .any
-2. [X] get ip and stored in local
-2. [X] cust axios property errorHandler
+3. [X] get ip and stored in local
+3. [X] cust axios property errorHandler
 3. [ ] x-reel-ip ? from Lottery or MAIL
+3. [ ] 權限不足（未登入）的一度趕出與重新登入後的轉址
 
 ## 關於 pinia
 
