@@ -32,11 +32,22 @@ This template should help get you started developing with Vue 3 in Vite.
 2. [ ] global locale 是否要繼續使用
 2. [ ] router 的規則調整
 2. [ ] state
+2. [X] init state: get IP
 2. [ ] Uploader update
 2. [X] Type of backendresponse
-2. [ ] get ip with .race
-2. [ ] get ip and stored in local
+2. [X] get ip with .any
+2. [X] get ip and stored in local
 2. [X] cust axios property errorHandler
+3. [ ] x-reel-ip ? from Lottery or MAIL
+
+## 關於 pinia
+
+不同於 axios, pinia 似乎不建議開發人員將 store 全部整合在一起(modules)
+不過pinia可以在app註冊後，於任何一處使用，因此stores的使用能夠更自由
+
+## 關於 getIP
+
+加入 store 與 Promise.race 後，getIP整體變得方便許多，能夠與axios半脫勾，但初始化時必定會發送數個API可能會是隱憂
 
 ## Recommended IDE Setup
 
