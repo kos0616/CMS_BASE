@@ -1,8 +1,8 @@
 import { useAuthStore } from '../../CORE/stores/auth';
 import { useRouter } from 'vue-router';
-import Logout from '../auth/Service/logout';
+import Logout from '../Service/logout';
 
-export default () => {
+export const useAuth = () => {
   const auth = useAuthStore();
   const router = useRouter();
   /**
