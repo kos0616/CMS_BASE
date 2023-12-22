@@ -16,7 +16,7 @@ const Axios = axios.create({
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
     'x-authorisation': getToken(),
-    'X-Branch-Source': IPStore.IP || (await IPStore.getIP())
+    'X-Branch-Source': IPStore.IP
   }
 });
 
