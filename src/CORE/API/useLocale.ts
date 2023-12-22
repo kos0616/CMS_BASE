@@ -6,6 +6,11 @@ import { useBus } from '@/CORE/plugins/bus';
 import changeHtmlLang from '../lib/changeHtmlLang';
 import { useI18n } from 'vue-i18n';
 
+const currentFileUrl = import.meta.url;
+const currentFilePath = new URL(currentFileUrl).pathname;
+console.log(currentFileUrl);
+console.log(currentFilePath);
+
 /** 系統語系名稱 */
 type sysLang = 'zh_TW' | 'zh_CN' | 'en';
 
