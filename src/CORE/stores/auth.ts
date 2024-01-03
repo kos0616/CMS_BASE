@@ -9,5 +9,12 @@ interface State {
 export const useAuthStore = defineStore('auth', {
   state: (): State => ({
     isLoggedIn: false
-  })
+  }),
+  actions: {
+    logout() {
+      this.isLoggedIn = false;
+      localStorage.removeItem('token');
+      localStorage.removeItem('x-authorisation');
+    }
+  }
 });

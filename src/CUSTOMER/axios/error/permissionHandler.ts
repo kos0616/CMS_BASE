@@ -1,6 +1,8 @@
 import router from '../../router';
 import { ElMessageBox } from 'element-plus';
 import i18n from '@/CORE/i18n';
+import { useAuthStore } from '@/CORE/stores/auth';
+
 // TODO state account logout
 
 /**
@@ -13,9 +15,7 @@ export default () => {
     title: 'Error',
     message: i18n.global.t('Util.10015')
   });
-
-  localStorage.removeItem('token');
-  localStorage.removeItem('x-authorisation');
-
+  const authState = useAuthStore();
+  authState.logout();
   router.push('/login');
 };

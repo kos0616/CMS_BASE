@@ -33,15 +33,18 @@ This template should help get you started developing with Vue 3 in Vite.
 2. [ ] router 的規則調整?
 2. [ ] state
 2. [ ] state of login state
+2. [ ] **10015**增加判斷以額外**一**發**API**判斷為越權或重新登入導向
 2. [X] init state: get IP
 2. [ ] Uploader update
 2. [X] Type of backendresponse
 2. [X] get ip with .any
-2. [X] get ip and stored in local
+3. [X] get ip and stored in local
 3. [X] cust axios property errorHandler
 3. [ ] x-reel-ip ? from Lottery or MAIL
 3. [ ] 權限不足（未登入）的一度趕出與重新登入後的轉址
 3. [ ] node可以取得 src/{ModuleName} 以減緩errorCodeAlerter的需求嗎
+3. [ ] 列表是否以**dropdown**形式表現
+3. [ ] MT與鹹恩版本的API應對?
 
 ## 關於 pinia
 
