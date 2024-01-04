@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
   const CUSTOMER = fileURLToPath(new URL('./', import.meta.url));
   // 设置第三个参数为 '' 来加载所有环境变量，而不管是否有 `VITE_` 前缀。
   const env = loadEnv(mode, CUSTOMER, 'VITE_');
-  const outDir = env.VITE_APP_NAME;
+  const outDir = env.VITE_APP_NAME || 'dist';
 
   return {
     plugins: [vue(), vueJsx()],
