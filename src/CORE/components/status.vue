@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import { PropType, computed } from 'vue';
+import { type PropType, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 const i18n = useI18n();
 
@@ -57,7 +57,7 @@ const showTextColor = computed(() => {
 
 /** 篩出來的選項 */
 const data = computed(() => {
-  const result = props.options.find((x) => x[props.id] === props.value);
+  const result = props.options.find((x) => x[props.id as 'value'] === props.value);
   return result ? result : ({ label: 'Util.noData' } as option);
 });
 </script>
