@@ -1,9 +1,8 @@
+import './assets/tailwind.scss';
 import 'element-plus/dist/index.css';
 /** 額外的黑化 element theme */
 import 'element-plus/theme-chalk/dark/css-vars.css';
 import './assets/element.scss';
-
-import './assets/tailwind.scss';
 
 import { createApp } from 'vue';
 import ElementPlus from 'element-plus';
