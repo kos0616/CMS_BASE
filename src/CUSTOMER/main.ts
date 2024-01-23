@@ -11,6 +11,7 @@ import createMeta from '@/CORE/lib/createMeta';
 import useBus from '@/CORE/plugins/bus';
 import useScreen from '@/CORE/plugins/screen';
 import formatNumber from '@/CORE/plugins/formatNumber';
+import isMobile from '@/CORE/plugins/isMobile';
 import day from '@/CORE/plugins/day';
 import router from './router';
 import App from './App.vue';
@@ -25,6 +26,7 @@ app
   .use(useBus)
   .use(i18n)
   .use(formatNumber)
+  .use(isMobile)
   .use(day)
   .use(ElementPlus);
 

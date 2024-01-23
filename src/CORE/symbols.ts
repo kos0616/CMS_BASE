@@ -12,3 +12,5 @@ export const $bus: InjectionKey<Emitter<Events>> = Symbol();
 export const $formatNumber: InjectionKey<Function> = Symbol();
 
 export const $day: InjectionKey<Function> = Symbol();
+
+export const $isMobile: InjectionKey<Boolean> = Symbol();
