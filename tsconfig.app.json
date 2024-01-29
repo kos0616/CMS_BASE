@@ -10,6 +10,9 @@
     "src/**/__tests__/*"
   ],
   "compilerOptions": {
+    "lib": [
+      "es2021"
+    ],
     "types": [
       "element-plus/global"
     ],
