@@ -1,11 +1,10 @@
 import './assets/tailwind.scss';
-import 'element-plus/dist/index.css';
 /** 額外的黑化 element theme */
-import 'element-plus/theme-chalk/dark/css-vars.css';
-import './assets/element.scss';
+// import 'element-plus/theme-chalk/dark/css-vars.css';
+// import './assets/element.scss';
 
 import { createApp } from 'vue';
-import ElementPlus from 'element-plus';
+// import ElementPlus from 'element-plus';
 import { createPinia } from 'pinia';
 import createMeta from '@/CORE/lib/createMeta';
 import useBus from '@/CORE/plugins/bus';
@@ -27,8 +26,8 @@ app
   .use(i18n)
   .use(formatNumber)
   .use(isMobile)
-  .use(day)
-  .use(ElementPlus);
+  .use(day);
+// .use(ElementPlus);
 
 app.mount('#app');
 

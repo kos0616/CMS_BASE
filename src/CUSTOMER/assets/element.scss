@@ -1,9 +1,21 @@
-:root {
-  // 修正初始文字大小
-  --el-font-size-base: 16px;
-  // 修正初始顏色
-  --el-text-color-regular: inherit;
-}
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  // 調整 primary color
+  $colors:
+    (
+      'primary': (
+        'base': #9925b0
+      )
+    ),
+  // 修正基礎文字大小
+  $font-size: ('base': 16px),
+  // 修正預設的、不帶樣式的基礎文字顏色
+  $text-color: ('regular': inherit),
+  // 依據水利署顏色定義原則，將開關設為 綠色 success 與 灰色 info
+  $switch: ('on-color': var(--el-color-success-dark-2), 'off-color': var(--el-color-info))
+);
+
+// @use 'element-plus/theme-chalk/src/index.scss' as *;
+// @use 'element-plus/theme-chalk/src/dark/css-vars.scss' as *;
 
 .el-dropdown {
   line-height: inherit;

@@ -2,6 +2,10 @@ import { fileURLToPath, URL } from 'node:url';
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
+// import { visualizer } from 'rollup-plugin-visualizer';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -14,7 +18,31 @@ export default defineConfig(({ mode }) => {
   const outDir = env.VITE_APP_NAME || 'dist';
 
   return {
-    plugins: [vue(), vueJsx()],
+    plugins: [
+      vue(),
+      vueJsx(),
+      AutoImport({
+        resolvers: [ElementPlusResolver()]
+      }),
+      // Components({ resolvers: [ElementPlusResolver({ importStyle: false })], dts: true })
+      Components({ resolvers: [ElementPlusResolver({ importStyle: 'sass' })] })
+      // visualizer({
+      //   gzipSize: true,
+      //   brotliSize: true,
+      //   emitFile: false,
+      //   filename: 'test.html', //分析图生成的文件名
+      //   open: true //如果存在本地服务端口，将在打包后自动展示
+      // })
+    ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `
+          @use "./src/CUSTOMER/assets/element.scss" as *;
+          `
+        }
+      }
+    },
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('../', import.meta.url))

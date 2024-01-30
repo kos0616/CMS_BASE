@@ -1,6 +1,8 @@
 <template>
   <div>
     <!-- <button @click="$bus.emit('foo', 'haha')">FOO</button> -->
+    <el-button type="primary">BTN</el-button>
+    <el-button type="success">BTN</el-button>
     <i class="fas fa-times fa-2x"></i>
     {{ url }}
     {{ today }}
