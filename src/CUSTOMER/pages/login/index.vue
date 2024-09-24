@@ -17,10 +17,7 @@
       </h2>
       <el-form :model="loginForm" @submit.prevent="onLogin" class="grid gap-3">
         <div>
-          <label for="account" class="mb-1 flex items-center gap-1">
-            <img src="@/CUSTOMER/assets/icons/member-active.svg" alt="帳號圖示" />
-            帳號
-          </label>
+          <label for="account" class="mb-1 flex items-center gap-1"> 帳號 </label>
           <div>
             <el-input
               required
@@ -32,10 +29,7 @@
           </div>
         </div>
         <div>
-          <label for="password" class="mb-1 flex items-center gap-1">
-            <img src="@/CUSTOMER/assets/icons/password-active.svg" alt="密碼圖示" />
-            密碼
-          </label>
+          <label for="password" class="mb-1 flex items-center gap-1"> 密碼 </label>
           <div>
             <el-input
               required

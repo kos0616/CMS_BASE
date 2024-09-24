@@ -1,15 +1,15 @@
 // import $i18n from './lang'
-import type { RouteRecordRaw } from 'vue-router';
 import { createRouter, createWebHistory } from 'vue-router';
 const BASE_TITLE = document.title;
+import Modules from '@/CUSTOMER/pages/router';
 
 /** 自動引入路徑 */
-const Modules = requireAll(
-  import.meta.glob('@/**/router.ts', { eager: true }) as Record<
-    string,
-    { default: RouteRecordRaw[] }
-  >
-);
+// const Modules = requireAll(
+//   import.meta.glob('@/**/router.ts', { eager: true }) as Record<
+//     string,
+//     { default: RouteRecordRaw[] }
+//   >
+// );
 
 const error404 = {
   path: '/:pathMatch(.*)*',
@@ -29,14 +29,6 @@ const Myrouter = createRouter({
   routes: [...Modules, error404]
 });
 export default Myrouter;
-
-/** 依據條件讓程式自動引入可使用的模組 */
-function requireAll<T>(requireContext: Record<string, { default: T[] }>): T[] {
-  return Object.values(requireContext)
-    .map((module) => module.default)
-    .filter((value) => value !== undefined)
-    .reduce((acc, cur) => [...acc, ...cur], [] as T[]);
-}
 
 Myrouter.beforeEach((to: any, from: any, next) => {
   /** 修改Title */

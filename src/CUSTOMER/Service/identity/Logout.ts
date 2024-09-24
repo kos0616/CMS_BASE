@@ -1,6 +1,6 @@
 import $http from '@/CUSTOMER/axios';
 
-const API = '/api/identity/logout';
+const API = '500';
 
 export type response = any;
 

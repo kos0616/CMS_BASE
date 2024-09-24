@@ -1,23 +1,7 @@
 <template>
   <div>
-    <button @click="dialogChangePassword = true" class="menu-btn">
-      <img
-        src="@/CUSTOMER/assets/icons/password-active.svg"
-        alt="password icon"
-        width="24"
-        height="24"
-      />
-      變更密碼
-    </button>
-    <button @click="logout" class="menu-btn">
-      <img
-        src="@/CUSTOMER/assets/icons/logout-active.svg"
-        alt="logout icon"
-        width="24"
-        height="24"
-      />
-      登出
-    </button>
+    <button @click="dialogChangePassword = true" class="menu-btn">變更密碼</button>
+    <button @click="logout" class="menu-btn">登出</button>
     <changePassword
       :model-value="dialogChangePassword"
       @close="dialogChangePassword = false"
@@ -28,9 +12,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { clearAuth } from '@/CUSTOMER/lib/auth';
-import LineNotify from './Service/LineNotify';
-import Unregister from './Service/Unregister';
-import { ElMessageBox } from 'element-plus';
 import changePassword from './changePassword.vue';
 import Logout from '@/CUSTOMER/Service/identity/Logout';
 import { useRouter } from 'vue-router';

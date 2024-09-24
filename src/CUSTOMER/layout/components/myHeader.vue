@@ -6,13 +6,7 @@
     <div class="flex justify-between px-5 py-3 md:px-3 md:py-2">
       <div class="flex flex-wrap items-center gap-2">
         <button @click="$emit('sidebarChanged')" title="開啟選單" type="button" class="">
-          <img
-            src="@/CUSTOMER/assets/icons/menu.svg"
-            width="24"
-            height="24"
-            alt="menu"
-            class="min-w-6"
-          />
+          <i class="fa-solid fa-bars"></i>
         </button>
         <strong class="flex items-center gap-1">
           <img :src="logo" alt="LOGO" height="30" width="30" class="aspect-square h-[30px]" />
