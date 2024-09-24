@@ -9,6 +9,8 @@ declare module 'vue-router' {
     title: string;
     /** 權限參考位址 */
     url: string;
+    /** 麵包屑參考 */
+    breadcrumb: { label: string; href: string }[];
     /** 工具列 */
     toolbar?: (
       | 'create'

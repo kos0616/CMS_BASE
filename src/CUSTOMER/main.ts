@@ -1,20 +1,23 @@
 import './assets/tailwind.scss';
-/** 額外的黑化 element theme */
-// import 'element-plus/theme-chalk/dark/css-vars.css';
-// import './assets/element.scss';
+import './assets/element.scss';
+import './assets/style.scss';
 
 import { createApp } from 'vue';
-// import ElementPlus from 'element-plus';
+import ElementPlus from 'element-plus';
 import { createPinia } from 'pinia';
 import createMeta from '@/CORE/lib/createMeta';
-import useBus from '@/CORE/plugins/bus';
 import useScreen from '@/CORE/plugins/screen';
 import formatNumber from '@/CORE/plugins/formatNumber';
 import isMobile from '@/CORE/plugins/isMobile';
 import day from '@/CORE/plugins/day';
+import wrud from '@/CORE/plugins/wrud';
 import router from './router';
 import App from './App.vue';
 import i18n from '@/CORE/i18n';
+import useBus from '@/CUSTOMER/plugins/bus';
+import tw from 'element-plus/es/locale/lang/zh-tw.mjs';
+import myTable from '@/CORE/components/table/table.vue';
+import myTableColumn from '@/CORE/components/table/table-column.vue';
 
 const app = createApp(App);
 
@@ -26,8 +29,14 @@ app
   .use(i18n)
   .use(formatNumber)
   .use(isMobile)
-  .use(day);
-// .use(ElementPlus);
+  .use(day)
+  .use(wrud)
+  .use(ElementPlus, {
+    locale: tw
+  });
+
+app.component('my-table', myTable);
+app.component('my-table-column', myTableColumn);
 
 app.mount('#app');
 

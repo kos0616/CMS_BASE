@@ -1,6 +1,6 @@
 import { ElMessageBox } from 'element-plus'; // 取得警告標籤
 import i18n from '@/CORE/i18n';
-import { COMMON_ERRORS } from '@/CUSTOMER/axios/error';
+// import { COMMON_ERRORS } from '@/CUSTOMER/axios/error';
 
 /**
  * 對應後端系統的共用錯誤
@@ -10,7 +10,7 @@ import { COMMON_ERRORS } from '@/CUSTOMER/axios/error';
  */
 export default (data: backendResponse<any>, moduleName: string): void => {
   /** 共用性錯誤，會在 axios 中處理 */
-  if (COMMON_ERRORS.includes(data.code)) return;
+  // if (COMMON_ERRORS.includes(data.code)) return;
 
   let msg = i18n.global.t('Util.error', { code: data.code }) + ` ${data.response}`;
   const errorMsg = i18n.global.t(`${moduleName}.${data.code}`);

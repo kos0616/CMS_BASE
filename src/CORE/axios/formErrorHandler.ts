@@ -1,7 +1,7 @@
 import { ElMessageBox } from 'element-plus';
 import { h } from 'vue';
 
-/** 
+/**
  * 20001 表單驗證錯誤
  * 沒有直接從核心 axios import 的原因是，未來若有修改錯誤顯示方式的需求，可以在 customer/axios/error 進行修改
  */

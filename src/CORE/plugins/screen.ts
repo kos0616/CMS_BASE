@@ -1,5 +1,4 @@
-import { ref, inject, type App, type Ref } from 'vue';
-import { $screenHeight, $screenWidth } from '../symbols';
+import { ref, type App, type Ref } from 'vue';
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
@@ -8,21 +7,16 @@ declare module '@vue/runtime-core' {
   }
 }
 
-export const useScreenWidth = () => inject($screenWidth);
-export const useScreenHeight = () => inject($screenHeight);
-
 /** 自訂插件，螢幕範圍監聽
  * $screenWidth $screenHeight
  */
 export default {
-  install: (app: App<Element>, options?: any) => {
+  install: (app: App<Element>) => {
     const width = ref(0);
     const height = ref(0);
 
     app.config.globalProperties.$screenWidth = width;
     app.config.globalProperties.$screenHeight = height;
-    app.provide($screenWidth, width);
-    app.provide($screenHeight, height);
 
     window.addEventListener('resize', handleResize);
     handleResize();

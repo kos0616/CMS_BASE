@@ -1,10 +1,11 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
   rules: {
-    'vue/multi-word-component-names': false
+    'vue/multi-word-component-names': 0,
+    'no-extra-boolean-cast': 0
   },
   extends: [
     'plugin:vue/vue3-essential',
@@ -15,4 +16,4 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest'
   }
-}
+};

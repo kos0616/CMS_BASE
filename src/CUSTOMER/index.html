@@ -2,8 +2,13 @@
 <html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:image" content="https://www.ia.gov.tw/images/ogimg.jpg" />
+    <meta property="og:description" content="TEST" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
     <meta http-equiv="pragma" content="no-cache" />
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
@@ -20,23 +25,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>CMS FROM customer</title>
+    <title>TEST</title>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="./main.ts"></script>
-
-    <script>
-      /** init theme */
-      const IS_DARK =
-        window.localStorage.theme === 'dark' ||
-        (!('theme' in window.localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-      if (IS_DARK) {
-        document.documentElement.dataset.mode = 'dark';
-        document.documentElement.classList.add('dark');
-      }
-    </script>
   </body>
 </html>

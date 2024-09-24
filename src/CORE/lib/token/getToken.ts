@@ -3,7 +3,7 @@ import generateToken from './generateToken';
 /** 檢查token的生命週期 如果過期就生一組新的 */
 export default () => {
   /** token */
-  let auth = localStorage.getItem('x-authorisation');
+  const auth = localStorage.getItem('x-authorisation');
   /** token 效期 */
   const token = localStorage.getItem('token');
 

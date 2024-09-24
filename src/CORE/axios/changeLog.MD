@@ -11,7 +11,7 @@
 
 ## TODO
 
-- [X] 後端error的 alerter 與 handler
+- [x] 後端error的 alerter 與 handler
 - [ ] get IP 與 getter 脫鉤，避免 api 回應過慢拖累效能
 - [ ] request 內 timestamp 的去留(目前找不到用途)
 - [ ] 整合 headers => 測試是否合併過了頭

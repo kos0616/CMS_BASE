@@ -7,7 +7,7 @@ export default function errorAlerter(error: any) {
   const status = error.response?.status;
 
   status
-    ? alerter(showMsg(status))
+    ? alerter(showMsg(error))
     : alerter(
         'A network error occurred. This could be a CORS issue or a dropped internet connection.'
       );
@@ -16,22 +16,23 @@ export default function errorAlerter(error: any) {
     ElMessageBox({
       type: 'error',
       title: 'Error',
-      message
+      message,
+      center: true
     });
   }
 
-  function showMsg(n: number): string {
-    switch (n) {
-      case 404:
-        return 'A network error occurred. Status 404';
-      case 500:
-        return 'A network error occurred. Status 500';
-      case 403:
-        return 'A network error occurred. Status 403';
-      case 401:
-        return 'A network error occurred. Status 401';
-      default:
-        return `A network error occurred. Status ${n}`;
-    }
+  function showMsg(err: any): string {
+    const n = err.response?.status;
+
+    /** 已設定訊息的錯誤碼 */
+    const errors: Record<number, string> = {
+      403: '您沒有訪問的權限，請聯絡系統管理員',
+      404: '伺服器找不到請求的資源，請再次確認搜尋參數，或聯絡系統管理員'
+    };
+    const msg = errors[n];
+    if (msg) return `${msg}(${n})`;
+
+    /** 未設定訊息的錯誤碼，顯示系統的預設錯誤訊息 */
+    return err.message;
   }
 }

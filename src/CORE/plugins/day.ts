@@ -1,5 +1,4 @@
-import { inject, type App } from 'vue';
-import { $day } from '../symbols';
+import { type App } from 'vue';
 import dayjs from 'dayjs';
 
 declare module '@vue/runtime-core' {
@@ -8,13 +7,10 @@ declare module '@vue/runtime-core' {
   }
 }
 
-export const useDay = () => inject($day);
-
 /** 自訂插件，日期格式化 */
 export default {
-  install: (app: App<Element>, options?: any) => {
+  install: (app: App<Element>) => {
     app.config.globalProperties.$day = day;
-    app.provide($day, day);
   }
 };
 /**

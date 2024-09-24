@@ -2,14 +2,9 @@ import EN from 'element-plus/es/locale/lang/en';
 import CN from 'element-plus/es/locale/lang/zh-cn';
 import TW from 'element-plus/es/locale/lang/zh-tw';
 import { ref, onMounted, onUnmounted } from 'vue';
-import { useBus } from '@/CORE/plugins/bus';
+// import { useBus } from '@/CORE/plugins/bus';
 import changeHtmlLang from '../lib/changeHtmlLang';
 import { useI18n } from 'vue-i18n';
-
-const currentFileUrl = import.meta.url;
-const currentFilePath = new URL(currentFileUrl).pathname;
-console.log(currentFileUrl);
-console.log(currentFilePath);
 
 /** 系統語系名稱 */
 type sysLang = 'zh_TW' | 'zh_CN' | 'en';
@@ -21,7 +16,7 @@ type sysLang = 'zh_TW' | 'zh_CN' | 'en';
 export default () => {
   /** element 語系 */
   const elementLocale = ref<Record<string, any>>(EN);
-  const bus = useBus();
+  // const bus = useBus();
   const i18n = useI18n();
 
   const handleLang = (lang: string) => {
@@ -56,11 +51,11 @@ export default () => {
 
   onMounted(() => {
     initLang();
-    bus?.on('changeLang', handleLang);
+    // bus?.on('changeLang', handleLang);
   });
 
   onUnmounted(() => {
-    bus?.off('changeLang', handleLang);
+    // bus?.off('changeLang', handleLang);
   });
 
   return { elementLocale };

@@ -1,18 +1,14 @@
-import { inject, type App } from 'vue';
-import { $isMobile } from '../symbols';
+import { type App } from 'vue';
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     $isMobile: boolean;
   }
 }
 
-export const useIsMobile = () => inject($isMobile);
-
 /** 偵測裝置 */
 export default {
   install: (app: App<Element>) => {
     app.config.globalProperties.$isMobile = isMobile();
-    app.provide($isMobile, isMobile());
   }
 };
 

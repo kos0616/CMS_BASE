@@ -4,7 +4,8 @@
 
 @layer base {
   :root {
-    --color-primary: #795548;
+    --color-primary: var(--el-color-primary);
+    --color-label: #e3f3f0;
   }
 
   html {
@@ -13,12 +14,21 @@
   }
 
   body {
-    @apply bg-slate-100 text-zinc-800 transition-colors dark:bg-neutral-900 dark:text-zinc-400;
+    @apply bg-[#f8fbfc] text-[#303030] transition-colors dark:bg-neutral-900 dark:text-zinc-400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   p {
     @apply mb-2 dark:text-stone-400;
+  }
+}
+
+@layer components {
+  .toolbar {
+    @apply fixed bottom-3 right-0 z-10 rounded-l-full bg-white p-2 shadow;
+    @media screen and (min-width: 640px) {
+      @apply static bg-transparent p-0 text-right shadow-none;
+    }
   }
 }

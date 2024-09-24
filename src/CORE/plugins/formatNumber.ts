@@ -1,18 +1,14 @@
-import { inject, type App } from 'vue';
-import { $formatNumber } from '../symbols';
+import { type App } from 'vue';
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     $formatNumber: typeof formatNumber;
   }
 }
 
-export const useFormatNumber = () => inject($formatNumber);
-
 /** 自訂插件，數字格式化 $formatNumber */
 export default {
-  install: (app: App<Element>, options?: any) => {
+  install: (app: App<Element>) => {
     app.config.globalProperties.$formatNumber = formatNumber;
-    app.provide($formatNumber, formatNumber);
   }
 };
 
