@@ -49,6 +49,13 @@ export default defineConfig(({ mode }) => {
      */
     define: {
       BUILD_TIME: JSON.stringify(new Date().toISOString())
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern'
+        }
+      }
     }
   };
 });
