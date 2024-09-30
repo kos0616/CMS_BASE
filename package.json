@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite serve src/CUSTOMER --host",
-    "build": "vite build src/CUSTOMER --mode cms --emptyOutDir",
+    "build": "vite build src/CUSTOMER --mode production --emptyOutDir",
     "#dev": "vite --host",
     "#build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
